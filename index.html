@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Timed Redirect</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Halaman B ditampilkan terlebih dahulu -->
+  <iframe
+    id="halamanB"
+    title="Halaman awal">
+  </iframe>
+
+  <script>
+    // KONFIGURASI
+    const linkB = "https://www.zalora.co.id/";
+    const linkC = "https://www.crazygames.com/";
+
+    // Durasi Link B (milidetik)
+    const durasi = 2000;
+
+    // Tampilkan Link B
+    document.getElementById("halamanB").src = linkB;
+
+    // Setelah 2 detik menuju Link C
+    setTimeout(function() {
+      window.location.replace(linkC);
+    }, durasi);
+  </script>
+
+</body>
+</html>
